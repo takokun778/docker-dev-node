@@ -1,0 +1,14 @@
+version: '3'
+services:
+    node:
+        container_name: node
+        build:
+            context: .
+            args: 
+                - UID=${UID}
+                - GID=${GID}
+        tty: true
+        volumes: 
+            - ./app:/node/app
+        ports:
+            - "3000:3000"

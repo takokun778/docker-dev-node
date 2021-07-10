@@ -5,5 +5,5 @@ docker-compose build
 
 docker-compose up -d 
 
-docker-compose exec node /bin/bash 
+docker-compose exec dev /bin/bash
 ```

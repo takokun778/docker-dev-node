@@ -1,14 +1,15 @@
 version: '3'
 services:
-    node:
-        container_name: node
+    dev:
+        container_name: ${UNAME}
         build:
             context: .
             args: 
                 - UID=${UID}
                 - GID=${GID}
+                - UNAME=${UNAME}
         tty: true
-        volumes: 
-            - ./app:/node/app
+        volumes:
+            - ./app:/home/${UNAME}/app
         ports:
             - "3000:3000"
